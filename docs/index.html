@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tra cứu giá thị trường</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <h1>💰 Tra cứu giá thị trường</h1>
+      <p class="sub">Nhập <strong>barcode</strong> hoặc <strong>tên hàng hoá</strong> — dữ liệu từ Google Search</p>
+    </header>
+
+    <main>
+      <form id="search-form" class="search-box" autocomplete="off">
+        <input
+          id="q"
+          type="text"
+          name="q"
+          placeholder="VD: 8935049501234  hoặc  sữa Vinamilk 1L"
+          aria-label="Nhập barcode hoặc tên hàng hoá"
+          required
+        />
+        <button type="submit" id="submit-btn">Tra cứu</button>
+      </form>
+      <p class="hint" id="type-hint"></p>
+      <p class="settings-toggle">
+        <button type="button" id="settings-btn">⚙️ Cấu hình khoá Google</button>
+      </p>
+
+      <section id="settings" class="settings-panel" hidden>
+        <h2>Cấu hình Google Custom Search</h2>
+        <p class="settings-desc">
+          Khoá chỉ lưu trong trình duyệt của bạn (localStorage), không gửi đi đâu khác ngoài Google.
+          Xem cách lấy khoá trong
+          <a href="https://github.com/warnbroom/price-lookup#readme" target="_blank" rel="noopener">README</a>.
+        </p>
+        <label>API Key
+          <input id="cfg-key" type="password" placeholder="AIza..." autocomplete="off" />
+        </label>
+        <label>Search Engine ID (cx)
+          <input id="cfg-cx" type="text" placeholder="0123abcd..." autocomplete="off" />
+        </label>
+        <div class="settings-actions">
+          <button type="button" id="cfg-save">Lưu</button>
+          <button type="button" id="cfg-clear" class="ghost">Xoá khoá</button>
+          <span id="cfg-status" class="cfg-status"></span>
+        </div>
+      </section>
+
+      <section id="status" class="status" hidden></section>
+      <section id="summary" class="summary" hidden></section>
+      <section id="results" class="results"></section>
+    </main>
+
+    <footer>
+      <p>Nguồn: Google Custom Search API. Giá chỉ mang tính tham khảo.</p>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
