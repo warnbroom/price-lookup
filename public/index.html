@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tra cứu giá thị trường</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <h1>💰 Tra cứu giá thị trường</h1>
+      <p class="sub">Nhập <strong>barcode</strong> hoặc <strong>tên hàng hoá</strong> — dữ liệu từ Google Search</p>
+    </header>
+
+    <main>
+      <form id="search-form" class="search-box" autocomplete="off">
+        <input
+          id="q"
+          type="text"
+          name="q"
+          placeholder="VD: 8935049501234  hoặc  sữa Vinamilk 1L"
+          aria-label="Nhập barcode hoặc tên hàng hoá"
+          required
+        />
+        <button type="submit" id="submit-btn">Tra cứu</button>
+      </form>
+      <p class="hint" id="type-hint"></p>
+
+      <section id="status" class="status" hidden></section>
+
+      <section id="summary" class="summary" hidden></section>
+
+      <section id="results" class="results"></section>
+    </main>
+
+    <footer>
+      <p>Nguồn: Google Custom Search API. Giá chỉ mang tính tham khảo.</p>
+    </footer>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
