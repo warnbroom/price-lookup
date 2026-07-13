@@ -5,7 +5,20 @@ Website tra cứu giá thị trường online. Nhập **barcode** hoặc **tên 
 - Input là **barcode** (8/12/13/14 chữ số) → tìm **chính xác** theo mã.
 - Input là **tên hàng hoá** → tìm **gần đúng** theo tên.
 
-## Cài đặt
+## 🔗 Dùng ngay (GitHub Pages)
+
+**https://warnbroom.github.io/price-lookup/**
+
+Bản này chạy hoàn toàn trong trình duyệt. Lần đầu vào, bấm **⚙️ Cấu hình khoá Google**,
+nhập **API Key** + **Search Engine ID** (xem cách lấy bên dưới). Khoá chỉ lưu trong
+localStorage của máy bạn, **không** nằm trong mã nguồn.
+
+> ⚠️ Vì key được dùng ở phía trình duyệt, hãy vào Google Cloud Console → API key →
+> *Application restrictions* → **HTTP referrers**, thêm `warnbroom.github.io/*` để giới hạn.
+
+Ngoài ra vẫn có **bản chạy server (Node/Express)** dưới đây nếu muốn giấu key phía backend.
+
+## Cài đặt (bản server)
 
 ```bash
 cd price-lookup
